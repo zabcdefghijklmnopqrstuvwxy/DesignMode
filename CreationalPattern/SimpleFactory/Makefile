@@ -15,8 +15,8 @@ all:$(TARGET)
 $(TARGET):$(OBJS)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-$(OBJFILE):%o:%c
-	$(CC) -o $^ $(CXXFLAGS) $(INCLUDE)
+$(OBJS):%o:%cpp
+	$(CC) -c $^ -o $@ $(CXXFLAGS) $(INCLUDE)
 
 clean:
 	rm -fr $(OBJS) $(TARGET)
